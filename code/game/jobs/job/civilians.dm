@@ -16,8 +16,8 @@
 	minimal_access = list(ACCESS_IFF_MARINE)
 
 /datum/job/civilian/professor
-	title = "Chief Medical Officer"
-	comm_title = "CMO"
+	title = "Head Sanitar"
+	comm_title = "Doc"
 	paygrade = "CCMO"
 	flag = ROLE_CHIEF_MEDICAL_OFFICER
 	total_positions = 1
@@ -53,21 +53,21 @@
 				)
 
 	generate_entry_message()
-		. = {"You are a civilian, and are not subject to follow military chain of command, but you do work for the USCM.
+		. = {"You are not a soldier, but do work for the UPP and must follow military chain of command.
 You have final authority over the medical department, medications, and treatments.
-Make sure that the doctors and nurses are doing their jobs and keeping the marines healthy and strong."}
+Make sure that the doctors and nurses are doing their jobs and keeping the soldiers healthy and strong."}
 
 
 //Doctor
 /datum/job/civilian/doctor
-	title = "Doctor"
-	comm_title = "Doc"
+	title = "Sanitar"
+	comm_title = "San"
 	paygrade = "CD"
 	flag = ROLE_CIVILIAN_DOCTOR
 	total_positions = 6
 	spawn_positions = 6
 	scaled = 1
-	supervisors = "the chief medical officer"
+	supervisors = "the head sanitar"
 	selection_color = "#BBFFBB"
 	access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY)
 	minimal_access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_CHEMISTRY)
@@ -101,21 +101,21 @@ Make sure that the doctors and nurses are doing their jobs and keeping the marin
 				)
 
 	generate_entry_message(mob/living/carbon/human/H)
-		. = {"You are a civilian, and are not subject to follow military chain of command, but you do work for the USCM.
-You are tasked with keeping the marines healthy and strong, usually in the form of surgery.
+		. = {"You are not a soldier, but do work for the UPP and must follow military chain of command.
+You are tasked with keeping the Union soldiers healthy and strong, usually in the form of surgery.
 You are also an expert when it comes to medication and treatment. If you do not know what you are doing, adminhelp so a mentor can assist you."}
 
 //Researcher
 /datum/job/civilian/researcher
 	title = "Researcher"
-	disp_title = "Medical Researcher"
+	disp_title = "Field Researcher"
 	comm_title = "Rsr"
 	paygrade = "CD"
 	flag = ROLE_CIVILIAN_RESEARCHER
 	total_positions = 2
 	spawn_positions = 2
 	scaled = 1
-	supervisors = "chief medical officer"
+	supervisors = "head sanitar"
 	selection_color = "#BBFFBB"
 	access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_CHEMISTRY)
 	minimal_access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_MEDBAY, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_CHEMISTRY)
@@ -148,20 +148,20 @@ You are also an expert when it comes to medication and treatment. If you do not 
 				)
 
 	generate_entry_message(mob/living/carbon/human/H)
-		. = {"You are a civilian, and are not subject to follow military chain of command, but you do work for the USCM.
-You are tasked with researching and developing new medical treatments, helping your fellow doctors, and generally learning new things.
-Your role involves a lot of roleplaying, but you can perform the function of a regular doctor. Do not hand out things to marines without getting permission from your supervisor."}
+		. = {"You are not a soldier, but do work for the UPP and must follow military chain of command.
+You are tasked with researching and developing new medical treatments, helping your fellow sanitars, and generally learning new things.
+Your role involves a lot of roleplaying, but you can perform the function of a regular sanitar. Do not hand out things to marines without getting permission from your supervisor."}
 
 //Liaison
 /datum/job/civilian/liaison
-	title = "Corporate Liaison"
-	comm_title = "CL"
+	title = "KGFSBMVD Agent"
+	comm_title = "KGFSBMVD"
 	paygrade = "WY1"
 	flag = ROLE_CORPORATE_LIAISON
 	department_flag = ROLEGROUP_MARINE_COMMAND
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the W-Y corporate office"
+	supervisors = "the KGFSBMVD head quarters"
 	selection_color = "#ffeedd"
 	access = list(ACCESS_IFF_MARINE, ACCESS_WY_CORPORATE, ACCESS_ILLEGAL_PIRATE, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_LOGISTICS)
 	minimal_access = list(ACCESS_IFF_MARINE, ACCESS_WY_CORPORATE, ACCESS_ILLEGAL_PIRATE, ACCESS_MARINE_BRIDGE, ACCESS_MARINE_DROPSHIP, ACCESS_MARINE_RESEARCH, ACCESS_MARINE_LOGISTICS)
@@ -179,10 +179,7 @@ Your role involves a lot of roleplaying, but you can perform the function of a r
 
 
 	generate_entry_message(mob/living/carbon/human/H)
-		. = {"As a representative of Weyland-Yutani Corporation, your job requires you to stay in character at all times.
-You are not required to follow military orders; however, you cannot give military orders.
-Your primary job is to observe and report back your findings to Weyland-Yutani. Follow regular game rules unless told otherwise by your superiors.
-Use your office fax machine to communicate with corporate headquarters or to acquire new directives. You may not receive anything back, and this is normal."}
+		. = {"PLACEHOLDER."}
 
 	generate_entry_conditions(mob/living/carbon/human/H)
 		if(ticker && H.mind) ticker.liaison = H.mind //TODO Look into CL tracking in game mode.
