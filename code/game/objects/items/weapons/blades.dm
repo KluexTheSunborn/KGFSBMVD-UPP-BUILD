@@ -141,22 +141,6 @@
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	flags_equip_slot = SLOT_STORE
 
-/obj/item/weapon/pitchfork
-	name ="Pitchfork"
-	icon='icons/obj/items/weapons.dmi'
-	icon_state = "pitchfork"
-	item_state = "spearglass"
-	desc="Sharp and long tool used by farmers for growing and carrying purposes. Might be useful against xenos, I guess?"
-	flags_atom = CONDUCT
-	sharp = IS_SHARP_ITEM_ACCURATE
-	force = 30
-	w_class = 1
-	throwforce = 55
-	throw_speed = 4
-	throw_range = 10
-	hitsound = 'sound/weapons/slash.ogg'
-	attack_verb = list("pierces")
-	flags_equip_slot = SLOT_STORE
 
 
 /obj/item/weapon/unathiknife
