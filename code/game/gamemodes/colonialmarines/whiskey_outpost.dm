@@ -1046,7 +1046,7 @@
 		to_chat(world, "<span class='round_body'>The signal rings out to the USS Alistoun, and Dust Raiders stationed elsewhere in Tychon's Rift begin to converge on LV-624.</span>")
 		to_chat(world, "<span class='round_body'>Eventually, the Dust Raiders secure LV-624 and the entire Tychon's Rift sector in 2182, pacifiying it and establishing peace in the sector for decades to come.</span>")
 		to_chat(world, "<span class='round_body'>The USS Almayer and the 7th 'Falling Falcons' Battalion are never sent to the sector and are spared their fate in 2186.</span>")
-		world << sound('sound/misc/hell_march.ogg')
+		world << sound('sound/roundend/TeamFortress.ogg')
 
 		log_game("Marines remaining: [count_humans()]\nRound time: [duration2text()]")
 	else
