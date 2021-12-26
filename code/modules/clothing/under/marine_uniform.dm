@@ -109,6 +109,11 @@
 	flags_cold_protection = ICE_PLANET_min_cold_protection_temperature
 	suit_restricted = list(/obj/item/clothing/suit/armor/vest/pilot)
 
+/obj/item/clothing/under/marine/officer/pilot/upp
+	name = "pilot officer bodysuit"
+	desc = "A bodysuit worn by pilot officers of the UPP, and is meant for survival in inhospitable conditions. Fly the soldiers onwards to glory. It has shards of light Kevlar to help protect against stabbing weapons, bullets, and shrapnel from explosions, a small EMF distributor to help null energy-based weapons, and a hazmat chemical filter weave to ward off biological and radiation hazards."
+	icon_state = "upp_uniform"
+
 /obj/item/clothing/under/marine/officer/pilot/New()
 	select_gamemode_skin(/obj/item/clothing/under/marine/officer/pilot)
 	..()
@@ -211,7 +216,7 @@
 	icon_state = "upp_uniform"
 	min_cold_protection_temperature = ICE_PLANET_min_cold_protection_temperature
 	has_sensor = 0
-	suit_restricted = list(/obj/item/clothing/suit/storage/faction/UPP, /obj/item/clothing/suit/storage/marine/smartgunner/UPP)
+	suit_restricted = list(/obj/item/clothing/suit/storage/faction/UPP, /obj/item/clothing/suit/storage/marine/smartgunner/UPP, /obj/item/clothing/suit/storage/marine/tanker/upp, )
 
 /obj/item/clothing/under/marine/veteran/UPP/medic
 	name = "UPP medic fatigues"

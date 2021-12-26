@@ -55,6 +55,37 @@
 		select_gamemode_skin(/obj/item/clothing/suit/armor/vest/pilot)
 		..()
 
+/obj/item/clothing/suit/armor/vest/pilot/upp
+	name = "M70 flak jacket"
+	desc = "A flak jacket used by dropship pilots to protect themselves while flying in the cockpit. Excels in protecting the wearer against high-velocity solid projectiles."
+	icon = 'icons/obj/clothing/cm_suits.dmi'
+	icon_state = "pilot"
+	sprite_sheet_id = 1
+	blood_overlay_type = "armor"
+	flags_armor_protection = UPPER_TORSO|LOWER_TORSO
+	flags_cold_protection = UPPER_TORSO|LOWER_TORSO
+	flags_heat_protection = UPPER_TORSO|LOWER_TORSO
+	armor = list(melee = 50, bullet = 60, laser = 35, energy = 20, bomb = 25, bio = 0, rad = 0)
+	allowed = list(/obj/item/weapon/gun/,
+		/obj/item/tank/emergency_oxygen,
+		/obj/item/device/flashlight,
+		/obj/item/ammo_magazine/,
+		/obj/item/storage/fancy/cigarettes,
+		/obj/item/tool/lighter,
+		/obj/item/weapon/baton,
+		/obj/item/handcuffs,
+		/obj/item/explosive/grenade,
+		/obj/item/device/binoculars,
+		/obj/item/weapon/combat_knife,
+		/obj/item/storage/sparepouch,
+		/obj/item/storage/large_holster/machete,
+		/obj/item/storage/belt/gun/korovin,
+		/obj/item/storage/belt/gun/kt42)
+	uniform_restricted = list(/obj/item/clothing/under/marine/officer/pilot)
+	New()
+		select_gamemode_skin(/obj/item/clothing/suit/armor/vest/pilot)
+		..()
+
 /obj/item/clothing/suit/armor/vest/dutch
 	name = "armored jacket"
 	desc = "It's hot in the jungle. Sometimes it's hot and heavy, and sometimes it's hell on earth."

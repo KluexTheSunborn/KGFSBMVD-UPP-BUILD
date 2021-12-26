@@ -290,6 +290,16 @@ var/list/squad_colors = list(rgb(230,25,25), rgb(255,195,45), rgb(200,100,200), 
 		select_gamemode_skin(type)
 		..()
 
+/obj/item/clothing/suit/storage/marine/tanker/upp
+	name = "T-8 pattern tanker armor"
+	desc = "A modified and refashioned suit of T-5 Pattern armor designed to be worn by the walker operator of a UPP vehicle crew. While the suit is a bit more encumbering to wear with the soldier fatigues, it offers the operator a degree of protection that would otherwise not be enjoyed."
+	icon_state = "tanker"
+	uniform_restricted = list(/obj/item/clothing/under/marine/veteran/UPP, /obj/item/clothing/under/soviet)
+
+	New()
+		select_gamemode_skin(type)
+		..()
+
 //===========================//SPECIALIST\\================================\\
 //=======================================================================\\
 

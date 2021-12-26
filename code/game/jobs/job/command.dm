@@ -25,7 +25,7 @@ var/datum/announcement/minor/captain_announcement = new(do_newscast = 1)
 	generate_wearable_equipment()
 		. = list(
 				WEAR_EAR = /obj/item/device/radio/headset/almayer/mcom,
-				WEAR_BODY = /obj/item/clothing/under/marine/officer/command,
+				WEAR_BODY = /obj/item/clothing/under/marine/veteran/UPP,
 				WEAR_FEET = /obj/item/clothing/shoes/marinechief/commander,
 				WEAR_HANDS = /obj/item/clothing/gloves/marine/techofficer/commander,
 				WEAR_WAIST = /obj/item/storage/belt/gun/mateba/cmateba/full,
@@ -76,7 +76,7 @@ Come hell or high water, you are going to be there for them."}
 	generate_wearable_equipment()
 		. = list(
 				WEAR_EAR = /obj/item/device/radio/headset/almayer/mcom,
-				WEAR_BODY = /obj/item/clothing/under/marine/officer/exec,
+				WEAR_BODY = /obj/item/clothing/under/marine/veteran/UPP,
 				WEAR_FEET = /obj/item/clothing/shoes/marine,
 				WEAR_WAIST = /obj/item/storage/belt/gun/kt42/standard,
 				WEAR_HEAD = /obj/item/clothing/head/uppcap,
@@ -154,7 +154,7 @@ Make the UPP proud!"}
 	generate_wearable_equipment()
 		. = list(
 				WEAR_EAR = /obj/item/device/radio/headset/almayer/mcom,
-				WEAR_BODY = /obj/item/clothing/under/marine/officer/pilot,
+				WEAR_BODY = /obj/item/clothing/under/marine/officer/pilot/upp,
 				WEAR_FEET = /obj/item/clothing/shoes/marine,
 				WEAR_HANDS = /obj/item/clothing/gloves/yellow,
 				WEAR_WAIST = /obj/item/storage/belt/gun/kt42/standard,
@@ -166,12 +166,12 @@ Make the UPP proud!"}
 	generate_stored_equipment()
 		. = list(
 				WEAR_L_HAND = /obj/item/clothing/glasses/sunglasses,
-				WEAR_R_HAND = /obj/item/clothing/head/helmet/marine/pilot
+				WEAR_R_HAND = /obj/item/clothing/head/uppcap
 				)
 
 	get_wearable_equipment()
 		var/L[] = list(
-						WEAR_EYES = /obj/item/clothing/head/helmet/marine/pilot,
+						WEAR_EYES = /obj/item/clothing/head/uppcap,
 						WEAR_HEAD = /obj/item/clothing/glasses/sunglasses
 						)
 
@@ -240,18 +240,18 @@ If you are not piloting, there is an autopilot fallback for command, but don't l
 	generate_wearable_equipment()
 		. = list(
 				WEAR_EAR = /obj/item/device/radio/headset/almayer/mcom,
-				WEAR_BODY = /obj/item/clothing/under/marine/officer/tanker,
+				WEAR_BODY = /obj/item/clothing/under/marine/veteran/UPP,
 				WEAR_FEET = /obj/item/clothing/shoes/marine,
 				WEAR_HANDS = /obj/item/clothing/gloves/yellow,
 				WEAR_WAIST = /obj/item/storage/belt/gun/kt42/standard,
-				WEAR_JACKET = /obj/item/clothing/suit/storage/marine/tanker,
+				WEAR_JACKET = /obj/item/clothing/suit/storage/marine/tanker/upp,
 				WEAR_BACK = /obj/item/storage/backpack/marine/satchel/upp,
 				WEAR_R_STORE = /obj/item/storage/pouch/general/large
 				)
 
 	generate_stored_equipment()
 		. = list(
-				WEAR_R_HAND = /obj/item/clothing/head/helmet/marine/tanker
+				WEAR_R_HAND = /obj/item/clothing/head/helmet/UPP
 				)
 
 	get_wearable_equipment()

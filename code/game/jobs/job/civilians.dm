@@ -38,7 +38,7 @@
 				WEAR_HANDS = /obj/item/clothing/gloves/latex,
 				WEAR_JACKET = /obj/item/clothing/suit/storage/labcoat,
 				WEAR_EYES = /obj/item/clothing/glasses/hud/health,
-				WEAR_BACK = /obj/item/storage/backpack/marine/satchel,
+				WEAR_BACK = /obj/item/storage/backpack/marine/satchel/upp,
 				WEAR_R_STORE = /obj/item/storage/pouch/medical,
 				WEAR_L_STORE = /obj/item/storage/pouch/syringe,
 				WEAR_HEAD = /obj/item/clothing/head/surgery/green
@@ -89,7 +89,7 @@ Make sure that the doctors and nurses are doing their jobs and keeping the soldi
 				WEAR_JACKET = /obj/item/clothing/suit/storage/labcoat,
 				WEAR_EYES = /obj/item/clothing/glasses/hud/health,
 				WEAR_HEAD = /obj/item/clothing/head/surgery/green,
-				WEAR_BACK = /obj/item/storage/backpack/marine/satchel,
+				WEAR_BACK = /obj/item/storage/backpack/marine/satchel/upp,
 				WEAR_R_STORE = /obj/item/storage/pouch/medical,
 				WEAR_L_STORE = /obj/item/storage/pouch/syringe
 				)
@@ -136,7 +136,7 @@ You are also an expert when it comes to medication and treatment. If you do not 
 				WEAR_HANDS = /obj/item/clothing/gloves/latex,
 				WEAR_JACKET = /obj/item/clothing/suit/storage/labcoat/researcher,
 				WEAR_EYES = /obj/item/clothing/glasses/hud/health,
-				WEAR_BACK = /obj/item/storage/backpack/marine/satchel,
+				WEAR_BACK = /obj/item/storage/backpack/marine/satchel/upp,
 				WEAR_R_STORE = /obj/item/storage/pouch/medical,
 				WEAR_L_STORE = /obj/item/storage/pouch/syringe
 				)
@@ -172,11 +172,12 @@ Your role involves a lot of roleplaying, but you can perform the function of a r
 	generate_wearable_equipment()
 		. = list(
 				WEAR_EAR = /obj/item/device/radio/headset/almayer/mcom,
-				WEAR_BODY = /obj/item/clothing/under/liaison_suit,
-				WEAR_FEET = /obj/item/clothing/shoes/laceup,
-				WEAR_BACK = /obj/item/storage/backpack/satchel
+				WEAR_BODY = /obj/item/clothing/under/soviet,
+				WEAR_FEET = /obj/item/clothing/shoes/jackboots,
+				WEAR_WAIST = /obj/item/storage/belt/gun/mateba/admiral,
+				WEAR_HANDS = /obj/item/clothing/gloves/swat,
+				WEAR_BACK = /obj/item/storage/backpack/marine/satchel/upp
 				)
-
 
 	generate_entry_message(mob/living/carbon/human/H)
 		. = {"PLACEHOLDER."}

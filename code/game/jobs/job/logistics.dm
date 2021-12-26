@@ -8,7 +8,7 @@
 //Ex-Chief Engineer, now - logistics officer
 /datum/job/logistics/engineering
 	title = "Praporshik"
-	comm_title = "PR"
+	comm_title = "RO"
 	paygrade = "O1"
 	flag = ROLE_LOGISTICS_OFFICER
 	department_flag = ROLEGROUP_MARINE_LOGISTICS
@@ -21,7 +21,7 @@
 	generate_wearable_equipment(mob/living/carbon/human/H)
 		. = list(
 				WEAR_EAR = /obj/item/device/radio/headset/almayer/mcom,
-				WEAR_BODY = /obj/item/clothing/under/rank/ro_suit,
+				WEAR_BODY = /obj/item/clothing/under/marine/veteran/UPP,
 				WEAR_FEET = /obj/item/clothing/shoes/marine,
 				WEAR_HANDS = /obj/item/clothing/gloves/yellow,
 				WEAR_WAIST = /obj/item/weapon/gun/revolver/upp,
