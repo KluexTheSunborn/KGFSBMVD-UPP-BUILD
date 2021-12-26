@@ -138,6 +138,46 @@
 	var/max_range = 6
 	fire_delay = 30
 
+/obj/item/walker_gun/shotgun
+	name = "M900 \"Leadwall\" Automatic Shotgun"
+	desc = "Titanfall moment."
+	icon_state = "mecha_machinegun"
+	equip_state = "mech-gatt"
+	fire_sound = 'sound/weapons/gun_mateba.ogg'
+	magazine_type = /obj/item/ammo_magazine/walker/shotgun
+	fire_delay = 10
+	burst = 1
+
+/obj/item/walker_gun/launcher
+	name = "M820 \"Aeehuiznaet\" Rocket Barrage System"
+	desc = "Titanfall moment."
+	icon_state = "mecha_flamer"
+	equip_state = "mech-flam"
+	fire_sound = 'sound/weapons/tank_cannon_distant1.ogg'
+	magazine_type = /obj/item/ammo_magazine/walker/launcher
+	fire_delay = 50
+	burst = 1
+
+/obj/item/walker_gun/barrel
+	name = "T-203 Thermite Launcher"
+	desc = "Titanfall moment."
+	icon_state = "mecha_flamer"
+	equip_state = "mech-flam"
+	fire_sound = 'sound/weapons/gun_mortar_fire.ogg'
+	magazine_type = /obj/item/ammo_magazine/walker/barrel
+	fire_delay = 70
+	burst = 1
+
+/obj/item/walker_gun/splitter
+	name = "T-374 Splitter Rifle"
+	desc = "Titanfall moment."
+	icon_state = "mecha_smartgun"
+	equip_state = "mech-shot"
+	fire_sound = 'sound/weapons/pulse.ogg'
+	magazine_type = /obj/item/ammo_magazine/walker/splitter
+	fire_delay = 10
+	burst = 1
+
 /obj/item/walker_gun/flamer/active_effect(var/atom/target)
 	if(ammo.current_rounds <= 0 || !ammo)
 		to_chat(owner.pilot, "<span class='warning'>WARNING! System report: ammunition is depleted!</span>")
@@ -296,6 +336,46 @@
 	max_rounds = 40
 	default_ammo = /datum/ammo/flamethrower
 	gun_type = /obj/item/walker_gun/flamer
+
+/obj/item/ammo_magazine/walker/shotgun
+	name = "M900 Automatic Shotgun Buckshot Magazine"
+	desc = "Titanfall moment."
+	icon_state = "ua571c"
+	max_rounds = 15
+	default_ammo = /datum/ammo/bullet/shotgun/buckshot
+	gun_type = /obj/item/walker_gun/shotgun
+
+/obj/item/ammo_magazine/walker/shotgun/flechette
+	name = "M900 Automatic Shotgun Flechette Magazine"
+	desc = "Titanfall moment."
+	icon_state = "ua571c"
+	max_rounds = 15
+	default_ammo = /datum/ammo/bullet/shotgun/flechette
+	gun_type = /obj/item/walker_gun/shotgun
+
+/obj/item/ammo_magazine/walker/launcher
+	name = "M820 Rocket Barrage System Cartrige"
+	desc = "Titanfall moment."
+	icon_state = "big_ammo_box"
+	max_rounds = 6
+	default_ammo = /datum/ammo/rocket/ap
+	gun_type = /obj/item/walker_gun/launcher
+
+/obj/item/ammo_magazine/walker/barrel
+	name = "T-203 Barrel Holder"
+	desc = "Titanfall moment."
+	icon_state = "ua571c"
+	max_rounds = 3
+	default_ammo = /datum/ammo/rocket/wp/quad/barrel
+	gun_type = /obj/item/walker_gun/launcher
+
+/obj/item/ammo_magazine/walker/splitter
+	name = "T-375 Armored Power Cell"
+	desc = "Titanfall moment."
+	icon_state = "big_ammo_box"
+	max_rounds = 80
+	default_ammo = /datum/ammo/energy/lasgan/walker
+	gun_type = /obj/item/walker_gun/splitter
 
 ///////////////
 // AMMO MAGS // END

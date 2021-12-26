@@ -141,17 +141,19 @@
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	flags_equip_slot = SLOT_STORE
 
-/obj/item/weapon/pitchfork
+/obj/item/weapon/twohanded/pitchfork
 	name ="Pitchfork"
 	icon='icons/obj/items/weapons.dmi'
 	icon_state = "pitchfork"
 	item_state = "spearglass"
 	desc="Sharp and long tool used by farmers for growing and carrying purposes. Might be useful against xenos, I guess?"
 	flags_atom = CONDUCT
+	flags_item = TWOHANDED
 	sharp = IS_SHARP_ITEM_ACCURATE
-	force = 30
-	w_class = 1
-	throwforce = 55
+	force = 20
+	force_wielded = 40
+	w_class = 4
+	throwforce = 40
 	throw_speed = 4
 	throw_range = 10
 	hitsound = 'sound/weapons/slash.ogg'

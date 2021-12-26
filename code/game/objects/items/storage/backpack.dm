@@ -313,7 +313,7 @@
 /obj/item/storage/backpack/marine/satchel/upp
 	name = "RD-60 satchel"
 	desc = "A heavy-duty satchel carried by UPP soldiers and support personnel."
-	icon_state = "securitypack"
+	icon_state = "ERT_satchel"
 
 
 /obj/item/storage/backpack/marine/satchel/medic

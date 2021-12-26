@@ -1106,6 +1106,30 @@
 	drop_flame(get_turf(P))
 	explosion(P.loc,  -1, 2, 4, 5)
 
+/datum/ammo/rocket/wp/quad/barrel
+	name = "thermite barrel"
+	flags_ammo_behavior = AMMO_ROCKET
+/datum/ammo/rocket/wp/quad/barrel/New()
+	..()
+	damage = config.ultra_hit_damage
+	max_range = config.long_shell_range
+
+/datum/ammo/rocket/wp/quad/barrel/on_hit_mob(mob/M,obj/item/projectile/P)
+	drop_flame(get_turf(M))
+	explosion(P.loc,  -1, 2, 4, 5)
+
+/datum/ammo/rocket/wp/quad/barrel/on_hit_obj(obj/O,obj/item/projectile/P)
+	drop_flame(get_turf(O))
+	explosion(P.loc,  -1, 2, 4, 5)
+
+/datum/ammo/rocket/wp/quad/barrel/on_hit_turf(turf/T,obj/item/projectile/P)
+	drop_flame(T)
+	explosion(P.loc,  -1, 2, 4, 5)
+
+/datum/ammo/rocket/wp/quad/barrel/do_at_max_range(obj/item/projectile/P)
+	drop_flame(get_turf(P))
+	explosion(P.loc,  -1, 2, 4, 5)
+
 /*
 //================================================
 					Energy Ammo

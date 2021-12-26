@@ -437,6 +437,19 @@
 	accuracy = config.max_hit_accuracy
 	scatter = 0
 
+/datum/ammo/energy/lasgan/walker
+	name = "lasbolt"
+	icon_state = "heavylaser"
+	flags_ammo_behavior = AMMO_ENERGY|AMMO_INCENDIARY
+
+/datum/ammo/energy/lasgan/walker/New()
+	..()
+	damage = config.low_hit_damage
+	max_range = config.short_shell_range
+	shell_speed = config.ultra_shell_speed
+	accuracy = config.max_hit_accuracy
+	scatter = 0
+
 /obj/item/weapon/gun/energy/lascannon
 	name = "HG-LG \"Supernova\""
 	desc = "Powerful laser cannon, \"Supernova\" may can only firing one bolt per cell, yet that bolt deliver heavy injures and can kill human in a instance."
