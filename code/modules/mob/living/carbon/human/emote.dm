@@ -327,23 +327,6 @@
 				playsound(src.loc, 'sound/misc/salute.ogg', 15, 1)
 			m_type = 1
 
-		if ("warcry")
-			var/warcry_sound_kitay = pick('sound/zaKitay/zakitay.ogg','sound/zakitay/warcry/male_attack.ogg','sound/zakitay/warcry/male_charge.ogg')
-			message = "<B>[comm_paygrade][src]</B> shouts an inspiring cry!"
-			m_type = 2
-			if(recent_audio_emote)
-				to_chat(src, "You just did an audible emote. Wait a while.")
-				return
-
-			message = "<B>[comm_paygrade][src]</B> shouts an inspiring cry!"
-			m_type = 2
-			if(has_species(src,"Human") && src.client)
-				if(gender == "male")
-					playsound(loc, warcry_sound_kitay, 50)
-				else
-					playsound(loc, warcry_sound_kitay, 50)
-			start_audio_emote_cooldown(2)
-
 		if("scream")
 			message = "<B>[comm_paygrade][src]</B> screams!"
 			m_type = 2
@@ -472,7 +455,6 @@
 			sneeze, \
 			snore, \
 			stare-(mob name), \
-			<span style='color: green;'>warcry</span>, \
 			twitch, \
 			wave, \
 			yawn</b><br>"
