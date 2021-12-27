@@ -141,12 +141,12 @@
 /obj/item/walker_gun/shotgun
 	name = "M900 \"Leadwall\" Automatic Shotgun"
 	desc = "Titanfall moment."
-	icon_state = "mecha_machinegun"
-	equip_state = "mech-gatt"
+	icon_state = "mecha_shotgun"
+	equip_state = "mech-shotgun"
 	fire_sound = 'sound/weapons/gun_mateba.ogg'
 	magazine_type = /obj/item/ammo_magazine/walker/shotgun
 	fire_delay = 10
-	burst = 1
+	burst = 2
 
 /obj/item/walker_gun/launcher
 	name = "M820 \"Aeehuiznaet\" Rocket Barrage System"
@@ -342,7 +342,7 @@
 	desc = "Titanfall moment."
 	icon = 'icons/obj/items/ammo.dmi'
 	icon_state = "ammoboxbuckshot_deployed"
-	max_rounds = 15
+	max_rounds = 18
 	default_ammo = /datum/ammo/bullet/shotgun/buckshot
 	gun_type = /obj/item/walker_gun/shotgun
 
@@ -351,7 +351,7 @@
 	desc = "Titanfall moment."
 	icon = 'icons/obj/items/ammo.dmi'
 	icon_state = "ammoboxslug_deployed"
-	max_rounds = 15
+	max_rounds = 18
 	default_ammo = /datum/ammo/bullet/shotgun/flechette
 	gun_type = /obj/item/walker_gun/shotgun
 
