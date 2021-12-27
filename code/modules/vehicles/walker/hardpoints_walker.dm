@@ -161,8 +161,8 @@
 /obj/item/walker_gun/barrel
 	name = "T-203 Thermite Launcher"
 	desc = "Titanfall moment."
-	icon_state = "mecha_flamer"
-	equip_state = "mech-flam"
+	icon_state = "mecha_termite"
+	equip_state = "mech-termite"
 	fire_sound = 'sound/weapons/gun_mortar_fire.ogg'
 	magazine_type = /obj/item/ammo_magazine/walker/barrel
 	fire_delay = 70
@@ -340,7 +340,8 @@
 /obj/item/ammo_magazine/walker/shotgun
 	name = "M900 Automatic Shotgun Buckshot Magazine"
 	desc = "Titanfall moment."
-	icon_state = "ua571c"
+	icon = 'icons/obj/items/ammo.dmi'
+	icon_state = "ammoboxbuckshot_deployed"
 	max_rounds = 15
 	default_ammo = /datum/ammo/bullet/shotgun/buckshot
 	gun_type = /obj/item/walker_gun/shotgun
@@ -348,7 +349,8 @@
 /obj/item/ammo_magazine/walker/shotgun/flechette
 	name = "M900 Automatic Shotgun Flechette Magazine"
 	desc = "Titanfall moment."
-	icon_state = "ua571c"
+	icon = 'icons/obj/items/ammo.dmi'
+	icon_state = "ammoboxslug_deployed"
 	max_rounds = 15
 	default_ammo = /datum/ammo/bullet/shotgun/flechette
 	gun_type = /obj/item/walker_gun/shotgun
@@ -356,7 +358,8 @@
 /obj/item/ammo_magazine/walker/launcher
 	name = "M820 Rocket Barrage System Cartrige"
 	desc = "Titanfall moment."
-	icon_state = "big_ammo_box"
+	icon = 'icons/obj/items/ammo.dmi'
+	icon_state = "slauncher_1"
 	max_rounds = 6
 	default_ammo = /datum/ammo/rocket/ap
 	gun_type = /obj/item/walker_gun/launcher
@@ -364,10 +367,11 @@
 /obj/item/ammo_magazine/walker/barrel
 	name = "T-203 Barrel Holder"
 	desc = "Titanfall moment."
-	icon_state = "ua571c"
+	icon = 'icons/obj/items/ammo.dmi'
+	icon_state = "quad_rocket"
 	max_rounds = 3
 	default_ammo = /datum/ammo/rocket/wp/quad/barrel
-	gun_type = /obj/item/walker_gun/launcher
+	gun_type = /obj/item/walker_gun/barrel
 
 /obj/item/ammo_magazine/walker/splitter
 	name = "T-375 Armored Power Cell"
