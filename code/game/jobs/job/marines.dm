@@ -22,8 +22,8 @@
 		if(flags_startup_parameters & ROLE_ADD_TO_MODE) H.nutrition = rand(60,250) //Start hungry for the default marine.
 
 /datum/job/marine/leader
-	title = "Squad Leader"
-	comm_title = "SL"
+	title = "Sergeant"
+	comm_title = "SGT"
 	paygrade = "E6"
 	flag = ROLE_MARINE_LEADER
 	total_positions = 2
@@ -32,12 +32,12 @@
 	access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_PREP, ACCESS_MARINE_LEADER, ACCESS_MARINE_DROPSHIP)
 	minimal_access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_PREP, ACCESS_MARINE_LEADER, ACCESS_MARINE_DROPSHIP)
 	minimal_player_age = 7
-	flags_startup_parameters = ROLE_ADD_TO_DEFAULT|ROLE_ADD_TO_MODE|ROLE_ADD_TO_SQUAD
+	flags_startup_parameters = ROLE_ADD_TO_DEFAULT|ROLE_ADD_TO_MODE
 	skills_type = /datum/skills/SL
 
 	generate_wearable_equipment()
 		. = list(
-				WEAR_BACK = /obj/item/storage/backpack/marine/satchel
+				WEAR_BACK = /obj/item/storage/backpack/marine/satchel/upp
 				)
 
 	generate_entry_message()
@@ -45,10 +45,9 @@
 You are also in charge of communicating with command and letting them know about the situation first hand. Keep out of harm's way."}
 
 /datum/job/marine/leader/equipped
-	flags_startup_parameters = ROLE_ADD_TO_SQUAD
 
 /datum/job/marine/engineer
-	title = "Squad Engineer"
+	title = "Field Engineer"
 	comm_title = "Eng"
 	paygrade = "E4"
 	total_positions = 6
@@ -56,12 +55,12 @@ You are also in charge of communicating with command and letting them know about
 	flag = ROLE_MARINE_ENGINEER
 	access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_PREP, ACCESS_MARINE_ENGPREP, ACCESS_CIVILIAN_ENGINEERING)
 	minimal_access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_PREP, ACCESS_MARINE_ENGPREP, ACCESS_CIVILIAN_ENGINEERING)
-	flags_startup_parameters = ROLE_ADD_TO_DEFAULT|ROLE_ADD_TO_MODE|ROLE_ADD_TO_SQUAD
+	flags_startup_parameters = ROLE_ADD_TO_DEFAULT|ROLE_ADD_TO_MODE
 	skills_type = /datum/skills/combat_engineer
 
 	generate_wearable_equipment()
 		. = list(
-				WEAR_BACK = /obj/item/storage/backpack/marine/tech
+				WEAR_BACK = /obj/item/storage/backpack/marine/satchel/upp
 				)
 
 	generate_entry_message()
@@ -69,10 +68,9 @@ You are also in charge of communicating with command and letting them know about
 Your squaddies will look to you when it comes to construction in the field of battle."}
 
 /datum/job/marine/engineer/equipped
-	flags_startup_parameters = ROLE_ADD_TO_SQUAD
 
 /datum/job/marine/medic
-	title = "Squad Medic"
+	title = "Field Medic"
 	comm_title = "Med"
 	paygrade = "E4"
 	total_positions = 8
@@ -80,12 +78,12 @@ Your squaddies will look to you when it comes to construction in the field of ba
 	flag = ROLE_MARINE_MEDIC
 	access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_PREP, ACCESS_MARINE_MEDPREP, ACCESS_MARINE_MEDBAY)
 	minimal_access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_PREP, ACCESS_MARINE_MEDPREP, ACCESS_MARINE_MEDBAY)
-	flags_startup_parameters = ROLE_ADD_TO_DEFAULT|ROLE_ADD_TO_MODE|ROLE_ADD_TO_SQUAD
+	flags_startup_parameters = ROLE_ADD_TO_DEFAULT|ROLE_ADD_TO_MODE
 	skills_type = /datum/skills/combat_medic
 
 	generate_wearable_equipment()
 		. = list(
-				WEAR_BACK = /obj/item/storage/backpack/marine/medic
+				WEAR_BACK = /obj/item/storage/backpack/marine/satchel/upp
 				)
 
 	generate_entry_message()
@@ -93,7 +91,6 @@ Your squaddies will look to you when it comes to construction in the field of ba
 You may not be a fully-fledged doctor, but you stand between life and death when it matters."}
 
 /datum/job/marine/medic/equipped
-	flags_startup_parameters = ROLE_ADD_TO_SQUAD
 
 /datum/job/marine/specialist
 	title = "Squad Specialist"
@@ -105,30 +102,28 @@ You may not be a fully-fledged doctor, but you stand between life and death when
 	access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_PREP, ACCESS_MARINE_SPECPREP)
 	minimal_access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_PREP, ACCESS_MARINE_SPECPREP)
 	minimal_player_age = 7
-	flags_startup_parameters = ROLE_ADD_TO_DEFAULT|ROLE_ADD_TO_MODE|ROLE_ADD_TO_SQUAD
+	flags_startup_parameters = ROLE_ADD_TO_DEFAULT|ROLE_ADD_TO_MODE
 	skills_type = /datum/skills/specialist
 
 	generate_wearable_equipment()
 		. = list(
-				WEAR_BACK = /obj/item/storage/backpack/marine/satchel
+				WEAR_BACK = /obj/item/storage/backpack/marine/satchel/upp
 				)
 	generate_stored_equipment()
 		. = list(
-				WEAR_L_HAND = /obj/item/clothing/head/helmet/specrag
+				WEAR_L_HAND = /obj/item/clothing/head/uppcap
 				)
 
 	generate_entry_message()
 		. = ..() + {"\nYou are the very rare and valuable weapon expert, trained to use special equipment.
 You can serve a variety of roles, so choose carefully."}
 
+
 /datum/job/marine/specialist/equipped
-	flags_startup_parameters = ROLE_ADD_TO_SQUAD
-
-
 
 
 /datum/job/marine/smartgunner
-	title = "Squad Smartgunner"
+	title = "Heavy Soldat"
 	comm_title = "LCpl"
 	paygrade = "E3"
 	flag = ROLE_MARINE_SMARTGUN
@@ -137,24 +132,21 @@ You can serve a variety of roles, so choose carefully."}
 	access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_PREP, ACCESS_MARINE_SMARTPREP)
 	minimal_access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_PREP, ACCESS_MARINE_SMARTPREP)
 	minimal_player_age = 7
-	flags_startup_parameters = ROLE_ADD_TO_DEFAULT|ROLE_ADD_TO_MODE|ROLE_ADD_TO_SQUAD
+	flags_startup_parameters = ROLE_ADD_TO_DEFAULT|ROLE_ADD_TO_MODE
 	skills_type = /datum/skills/smartgunner
 
 	generate_wearable_equipment()
 		. = list(
-				WEAR_BACK = /obj/item/storage/backpack/marine/satchel
+				WEAR_BACK = /obj/item/storage/backpack/marine/satchel/upp
 				)
 
 	generate_entry_message()
 		. = ..() + {"\nYou are the smartgunner. Your job is to provide heavy weapons support."}
 
-
 /datum/job/marine/smartgunner/equipped
-	flags_startup_parameters = ROLE_ADD_TO_SQUAD
-
 
 /datum/job/marine/standard
-	title = "Squad Marine"
+	title = "Soldat"
 	comm_title = "Mar"
 	paygrade = "E2"
 	flag = ROLE_MARINE_STANDARD
@@ -165,16 +157,39 @@ You can serve a variety of roles, so choose carefully."}
 	access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_PREP)
 	minimal_access = list(ACCESS_IFF_MARINE, ACCESS_MARINE_PREP)
 	minimal_player_age = 0
-	flags_startup_parameters = ROLE_ADD_TO_DEFAULT|ROLE_ADD_TO_MODE|ROLE_ADD_TO_SQUAD
+	flags_startup_parameters = ROLE_ADD_TO_DEFAULT|ROLE_ADD_TO_MODE
 
 	generate_wearable_equipment()
 		. = list(
-				WEAR_BACK = /obj/item/storage/backpack/marine/satchel
+				WEAR_BACK = /obj/item/storage/backpack/marine/satchel/upp
 				)
 
 	generate_entry_message()
-		. = ..() + {"\nYou are a rank-and-file soldier of the USCM, and that is your strength.
-What you lack alone, you gain standing shoulder to shoulder with the men and women of the corps. Ooh-rah!"}
+		. = ..() + {"\nYou are a rank-and-file soldier of the UPP, and that is your strength.
+What you lack alone, you gain standing shoulder to shoulder with the men and women of the army. Ooh-rah!"}
 
 /datum/job/marine/standard/equipped
-	flags_startup_parameters = ROLE_ADD_TO_SQUAD
+
+/datum/job/marine/shtrafbat
+	title = "Shtrafbat Soldier"
+	comm_title = "Strf"
+	paygrade = "E1"
+	flag = ROLE_MARINE_SHTRAFBAT
+	department_flag = ROLEGROUP_MARINE_SQUAD_MARINES
+	faction = "Station"
+	total_positions = 10
+	spawn_positions = 10
+	access = list(ACCESS_IFF_MARINE)
+	minimal_access = list(ACCESS_IFF_MARINE)
+	minimal_player_age = 0
+	flags_startup_parameters = ROLE_ADD_TO_DEFAULT|ROLE_ADD_TO_MODE
+
+	generate_wearable_equipment()
+		. = list(
+				WEAR_BACK = /obj/item/weapon/twohanded/spear
+				)
+
+	generate_entry_message()
+		. = ..() + {"\nYou have sinned against your brotherhood. You will give your life to atone for your guilt! Ura!"}
+
+/datum/job/marine/shtrafbat/equipped

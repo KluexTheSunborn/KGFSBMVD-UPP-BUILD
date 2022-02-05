@@ -31,5 +31,5 @@
 
 	generate_entry_message(mob/living/carbon/human/H)
 		. = {"You are a civilian, working as a cook on USS Almayer.
-You are tasked with cooking food and making sure the marines are well-fed.
+You are tasked with cooking food and making sure the soldiers are well-fed.
 Your role involves a lot of roleplaying, and though your supervisor is the military chain of command - you are still just a civillian with no extraordinary skills."}
