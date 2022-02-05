@@ -741,3 +741,350 @@
 					)
 
 	prices = list()
+
+
+/obj/machinery/vending/marine_medic/upp
+	name = "H-OurTech Medic Vendor"
+	desc = "A UPP medic equipment vendor"
+	product_ads = "They were gonna die anyway.;Let's get space drugged!"
+	req_access = list(ACCESS_MARINE_MEDPREP)
+	icon_state = "medicprepvendor"
+	icon_deny = "medicprepvendor-deny"
+	wrenchable = FALSE
+
+	products = list(
+						/obj/item/clothing/under/marine/veteran/UPP/medic = 4,
+						/obj/item/clothing/head/helmet/UPP = 4,
+						/obj/item/storage/backpack/marine/satchel/upp = 8,
+						/obj/item/device/encryptionkey/med = 4,
+						/obj/item/storage/belt/marine/upp = 4,
+						/obj/item/bodybag/cryobag = 4,
+						/obj/item/device/healthanalyzer = 4,
+						/obj/item/clothing/glasses/hud/health = 4,
+						/obj/item/storage/firstaid/regular = 4,
+						/obj/item/storage/firstaid/adv = 4,
+						/obj/item/storage/pouch/medical = 4,
+						/obj/item/storage/pouch/medkit = 4,
+						/obj/item/storage/pouch/magazine = 4,
+						/obj/item/storage/pouch/pistol = 4,
+						/obj/item/clothing/mask/gas = 4
+					)
+	contraband = list(/obj/item/reagent_container/blood/OMinus = 1)
+
+
+/obj/machinery/vending/marine_special/upp
+	name = "H-OurTech Specialist Vendor"
+	desc = "A UPP specialist equipment vendor"
+	hacking_safety = 1
+	product_ads = "If it moves, it's hostile!;How many enemies have you killed today?;Shoot first, perform autopsy later!;Your ammo is right here.;Guns!;Die, scumbag!;Don't shoot me bro!;Shoot them, bro.;Why not have a donut?"
+	req_access = list(ACCESS_MARINE_SPECPREP)
+	icon_state = "boozeomat"
+	icon_deny = "boozeomat-deny"
+	wrenchable = FALSE
+	tokensupport = TOKEN_SPEC
+
+	products = list(
+						/obj/item/coin/marine/specialist = 1,
+						/obj/item/clothing/tie/storage/webbing = 1,
+						/obj/item/explosive/plastique = 2,
+						/obj/item/explosive/grenade/frag/upp = 2,
+						/obj/item/explosive/grenade/phosphorus/upp = 2,
+//						/obj/item/weapon/gun/flamer = 1,
+//						/obj/item/tank/phoron/m240 = 3,
+						///obj/item/weapon/shield/riot = 1,
+						/obj/item/storage/pouch/magazine/large = 1,
+						/obj/item/storage/pouch/general/medium = 1,
+						/obj/item/clothing/mask/gas = 1
+			)
+	contraband = list()
+	premium = list(
+					/obj/item/storage/box/spec/demolitionist = 1,
+					/obj/item/storage/box/spec/heavy_grenadier = 1,
+					/obj/item/storage/box/m42c_system = 1,
+					/obj/item/storage/box/m42c_system_Jungle = 1,
+					/obj/item/storage/box/spec/pyro = 1
+			)
+	prices = list()
+
+
+/obj/machinery/vending/shared_vending/marine_special/upp
+	name = "H-OurTech Specialist Vendor"
+	desc = "A UPP specialist equipment vendor"
+	hacking_safety = 1
+	product_ads = "If it moves, it's hostile!;How many enemies have you killed today?;Shoot first, perform autopsy later!;Your ammo is right here.;Guns!;Die, scumbag!;Don't shoot me bro!;Shoot them, bro.;Why not have a donut?"
+	req_access = list(ACCESS_MARINE_SPECPREP)
+	icon_state = "boozeomat"
+	icon_deny = "boozeomat-deny"
+	wrenchable = FALSE
+	tokensupport = TOKEN_SPEC
+
+	products = list(
+						/obj/item/coin/marine/specialist = 1,
+			)
+	contraband = list()
+	//premium = list(/obj/item/weapon/shield/riot = 1)	//NOTE: This needs to be re-worked so we don't have to have a riot shield in here at all. ~Bmc777
+	shared = list(
+					/obj/item/storage/box/spec/demolitionist = 1,
+					/obj/item/storage/box/spec/heavy_grenadier = 1,
+					/obj/item/storage/box/spec/sniper = 1,
+					/obj/item/storage/box/spec/scout = 1,
+					/obj/item/storage/box/spec/pyro = 1
+			)
+	prices = list()
+
+/obj/machinery/vending/shared_vending/marine_special/upp/New()
+
+	if(shared_products.len == 0)
+		var/i
+
+		for(i in shared)
+			shared_products.Add(new /datum/data/vending_product())
+	..()
+
+/obj/machinery/vending/shared_vending/marine_engi/upp
+	name = "H-OurTech Engineer System Vendor"
+	desc = "A UPP engineering system vendor"
+	product_ads = "If it breaks, wrench it!;If it wrenches, weld it!;If it snips, snip it!"
+	req_access = list(ACCESS_MARINE_ENGPREP)
+	icon_state = "tool"
+	icon_deny = "tool-deny"
+	wrenchable = FALSE
+	tokensupport = TOKEN_ENGI
+
+	products = list(
+					/obj/item/coin/marine/engineer = 2,
+					)
+	contraband = list(/obj/item/cell/super = 1)
+
+	premium = list(
+					/obj/item/storage/box/sentry = 1,
+					/obj/item/storage/box/m56d_hmg = 1
+					)
+	shared = list(
+				/obj/structure/closet/crate/mortar_ammo/mortar_kit = 1,
+				/obj/structure/closet/crate/m8_1_tow_ammo/m8_1_tow_kit = 1
+				)
+	prices = list()
+
+/obj/machinery/vending/shared_vending/marine_engi/New()
+
+	if(shared_products.len == 0)
+		var/i
+
+		for(i in shared)
+			shared_products.Add(new /datum/data/vending_product())
+	..()
+
+/obj/machinery/vending/marine_smartgun/upp
+	name = "H-OurTech Smartgun Vendor"
+	desc = "A UPP smartgun equipment vendor"
+	hacking_safety = 1
+	product_ads = "If it moves, it's hostile!;How many enemies have you killed today?;Shoot first, perform autopsy later!;Your ammo is right here.;Guns!;Die, scumbag!;Don't shoot me bro!;Shoot them, bro.;Why not have a donut?"
+	req_access = list(ACCESS_MARINE_SMARTPREP)
+	icon_state = "boozeomat"
+	icon_deny = "boozeomat-deny"
+	wrenchable = FALSE
+
+	products = list(
+						/obj/item/clothing/tie/storage/webbing = 1,
+						/obj/item/storage/box/m56_system = 1,
+						/obj/item/smartgun_powerpack = 1,
+						/obj/item/storage/pouch/magazine = 1,
+						/obj/item/clothing/mask/gas = 1
+			)
+	contraband = list()
+	premium = list()
+	prices = list()
+
+/obj/machinery/vending/marine_leader/upp
+	name = "H-OurTech Sergeant Vendor"
+	desc = "A UPP leader equipment vendor"
+	hacking_safety = 1
+	product_ads = "If it moves, it's hostile!;How many enemies have you killed today?;Shoot first, perform autopsy later!;Your ammo is right here.;Guns!;Die, scumbag!;Don't shoot me bro!;Shoot them, bro.;Why not have a donut?"
+	req_access = list(ACCESS_MARINE_LEADER)
+	icon_state = "tool"
+	icon_deny = "tool-deny"
+	wrenchable = FALSE
+	tokensupport = "marine"
+
+	products = list(
+						/obj/item/clothing/suit/storage/marine/leader = 1,
+						/obj/item/clothing/head/helmet/marine/leader = 1,
+						/obj/item/clothing/tie/storage/webbing = 1,
+						/obj/item/device/squad_beacon = 3,
+						/obj/item/device/squad_beacon/bomb = 1,
+						/obj/item/explosive/plastique = 1,
+						/obj/item/explosive/grenade/phosphorus/upp = 3,
+						/obj/item/device/binoculars/tactical = 1,
+						/obj/item/device/motiondetector = 1,
+						/obj/item/ammo_magazine/pistol/c99t = 2,
+						/obj/item/ammo_magazine/pistol/c99 = 1,
+						/obj/item/storage/backpack/marine/satchel/upp = 2,
+						/obj/item/weapon/gun/flamer = 2,
+						/obj/item/ammo_magazine/flamer_tank = 8,
+						/obj/item/storage/pouch/magazine/large = 1,
+						/obj/item/storage/pouch/general/large = 1,
+						/obj/item/storage/pouch/pistol = 1,
+						/obj/item/clothing/mask/gas = 1,
+						/obj/item/device/whistle = 1,
+						/obj/item/storage/box/zipcuffs = 2
+					)
+
+/obj/machinery/vending/marine/cargo_guns/upp
+	name = "H-OurTech automated armaments vendor"
+	desc = "A automated rack hooked up to a small supply of various firearms and explosives."
+	hacking_safety = 1
+	req_access = list(ACCESS_MARINE_CARGO)
+	wrenchable = FALSE
+	products = list(
+					/obj/item/storage/backpack/marine/satchel/upp = 15,
+					/obj/item/storage/belt/marine/upp = 15,
+					/obj/item/storage/belt/shotgun = 10,
+					/obj/item/clothing/tie/storage/webbing = 3,
+					/obj/item/clothing/tie/storage/brown_vest = 1,
+					/obj/item/clothing/tie/holster = 1,
+					/obj/item/storage/belt/gun/korovin = 10,
+					/obj/item/storage/belt/gun/kt42 = 5,
+					/obj/item/storage/pouch/general/medium = 2,
+					/obj/item/storage/pouch/construction = 2,
+					/obj/item/storage/pouch/tools = 2,
+					/obj/item/storage/pouch/explosive = 2,
+					/obj/item/storage/pouch/syringe = 2,
+					/obj/item/storage/pouch/medical = 2,
+					/obj/item/storage/pouch/medkit = 2,
+					/obj/item/storage/pouch/magazine = 5,
+					/obj/item/storage/pouch/flare/full = 5,
+					/obj/item/storage/pouch/firstaid/full = 5,
+					/obj/item/storage/pouch/pistol = 10,
+					/obj/item/storage/pouch/bayonet/upp = 10,
+					/obj/item/storage/pouch/magazine/pistol/large = 5,
+					/obj/item/weapon/gun/rifle/saiga = 5,
+					/obj/item/weapon/gun/pistol/c99/upp = 20,
+					/obj/item/weapon/gun/pistol/kt42 = 2,
+					/obj/item/weapon/gun/revolver/upp = 10,
+					/obj/item/weapon/gun/smg/ppsh = 15,
+					/obj/item/weapon/gun/smg/skorpion = 10,
+					/obj/item/weapon/gun/rifle/type71 = 20,
+					/obj/item/weapon/gun/shotgun/pump = 10,
+					/obj/item/device/motiondetector = 4,
+					/obj/item/weapon/shield/montage/marine = 6,
+					// /obj/item/weapon/gun/shotgun/combat = 1,
+					/obj/item/explosive/mine = 2,
+					/obj/item/explosive/grenade/frag/upp = 40,
+					/obj/item/explosive/grenade/phosphorus/upp = 15,
+					/obj/item/storage/box/matches = 20,
+					/obj/item/device/flashlight/combat = 20,
+					/obj/item/clothing/mask/gas = 10,
+					/obj/item/storage/kit/Saiga = 2,
+					/obj/item/storage/kit/ak = 2,
+					)
+
+	contraband = list(
+					/obj/item/weapon/gun/smg/m39 = 4,
+					/obj/item/weapon/gun/shotgun/double = 2,
+					/obj/item/weapon/gun/smg/m39/elite = 0,
+					/obj/item/weapon/gun/rifle/m41aMK1 = 0,
+					/obj/item/weapon/gun/rifle/m41a/elite = 0,
+					/obj/item/weapon/gun/rifle/lmg = 0,
+					// /obj/item/weapon/gun/rifle/ak = 4,
+					/obj/item/explosive/grenade/frag = 0,
+					/obj/item/explosive/grenade/phosphorus = 0,
+					/obj/item/weapon/gun/pistol/holdout = 0,
+					/obj/item/weapon/gun/pistol/heavy = 0,
+					/obj/item/weapon/gun/pistol/highpower = 0,
+					/obj/item/weapon/gun/pistol/vp70 = 0,
+					/obj/item/weapon/gun/revolver/small = 0,
+					/obj/item/weapon/gun/revolver/cmb = 0,
+					/obj/item/weapon/gun/shotgun/merc = 0,
+					/obj/item/weapon/gun/shotgun/pump/cmb = 0,
+					/obj/item/weapon/gun/smg/mp7 = 0,
+					/obj/item/weapon/gun/smg/skorpion = 0,
+					/obj/item/weapon/gun/smg/uzi = 0,
+					/obj/item/weapon/gun/smg/p90 = 0,
+					// /obj/item/storage/kit/ak = 1
+					)
+	premium = list()
+
+
+/obj/machinery/vending/marine/cargo_guns/upp/select_gamemode_equipment(gamemode)
+	return
+
+/obj/machinery/vending/marine/cargo_guns/upp/New()
+	..()
+	cargo_guns_vendors.Add(src)
+	marine_vendors.Remove(src)
+
+/obj/machinery/vending/marine/cargo_guns/upp/Dispose()
+	. = ..()
+	cargo_guns_vendors.Remove(src)
+
+
+/obj/machinery/vending/marine/cargo_ammo/upp
+	name = "H-OurTech automated munition vendor"
+	desc = "A automated rack hooked up to a small supply of ammo magazines."
+	hacking_safety = 1
+	req_access = list(ACCESS_MARINE_CARGO)
+	wrenchable = FALSE
+	products = list(
+					/obj/item/storage/large_holster/machete/full = 10,
+					/obj/item/ammo_magazine/pistol/c99 = 20,
+					/obj/item/ammo_magazine/pistol/c99t = 10,
+					/obj/item/ammo_magazine/pistol/automatic = 10,
+					/obj/item/ammo_magazine/revolver/upp = 25,
+					/obj/item/ammo_magazine/smg/ppsh = 15,
+					/obj/item/ammo_magazine/smg/ppsh/extended = 10,
+					/obj/item/ammo_magazine/smg/skorpion = 15,
+					/obj/item/ammo_magazine/rifle/type71 = 25,
+					/obj/item/ammo_magazine/rifle/ak = 25,
+					/obj/item/ammo_magazine/rifle/ak/ap = 2,
+					/obj/item/ammo_magazine/rifle/ak/incendiary = 2,
+					/obj/item/ammo_magazine/shotgunbox = 3,
+					/obj/item/ammo_magazine/shotgun = 10,
+					/obj/item/ammo_magazine/shotgunbox/buckshot = 3,
+					/obj/item/ammo_magazine/shotgun/buckshot = 10,
+					/obj/item/ammo_magazine/shotgun/flechette = 15,
+					/obj/item/ammobox/s22 = 1,
+					/obj/item/ammobox/s22buckshot = 1,
+					/obj/item/ammobox/s22incendiary = 1,
+					/obj/item/smartgun_powerpack = 2
+					)
+
+	contraband = list(
+					/obj/item/ammo_magazine/smg/ppsh/ = 20,
+					/obj/item/ammo_magazine/smg/ppsh/extended = 4,
+					/obj/item/ammo_magazine/sniper = 0,
+					/obj/item/ammo_magazine/sniper/incendiary = 0,
+					/obj/item/ammo_magazine/sniper/flak = 0,
+					/obj/item/ammo_magazine/rifle/m4ra = 0,
+					/obj/item/ammo_magazine/rifle/incendiary = 0,
+					/obj/item/ammo_magazine/rifle/m41aMK1 = 0,
+					/obj/item/ammo_magazine/rifle/lmg = 0,
+					// /obj/item/ammo_magazine/rifle/ak = 20,
+					// /obj/item/ammo_magazine/rifle/ak/ap = 15,
+					// /obj/item/ammo_magazine/rifle/ak/incendiary = 10,
+					/obj/item/ammo_magazine/pistol/hp = 0,
+					/obj/item/ammo_magazine/pistol/heavy = 0,
+					/obj/item/ammo_magazine/pistol/holdout = 0,
+					/obj/item/ammo_magazine/pistol/highpower = 0,
+					/obj/item/ammo_magazine/pistol/vp70 = 0,
+					/obj/item/ammo_magazine/revolver/small = 0,
+					/obj/item/ammo_magazine/revolver/cmb = 0,
+					/obj/item/ammo_magazine/smg/mp7 = 0,
+					/obj/item/ammo_magazine/smg/skorpion = 0,
+					/obj/item/ammo_magazine/smg/uzi = 0,
+					/obj/item/ammo_magazine/smg/p90 = 0
+					)
+	premium = list()
+
+
+/obj/machinery/vending/marine/cargo_ammo/upp/select_gamemode_equipment(gamemode)
+	return
+
+/obj/machinery/vending/marine/cargo_ammo/upp/New()
+	..()
+	cargo_ammo_vendors.Add(src)
+	marine_vendors.Remove(src)
+
+/obj/machinery/vending/marine/cargo_ammo/upp/Dispose()
+	. = ..()
+	cargo_ammo_vendors.Remove(src)
