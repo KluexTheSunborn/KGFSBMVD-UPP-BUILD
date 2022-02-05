@@ -109,14 +109,43 @@
 	. = ..()
 	if(isYautja(M))
 		return
-	var/mob/living/carbon/Xenomorph/X
-	if(isXeno(M) && X.tier == 1)
+//	var/mob/living/carbon/Xenomorph/X
+	if(isXeno(M)) //&& X.tier == 1) /*tofix*/
 		if(prob(40))
 			M.KnockDown(2)
 			return
 	if(ishuman(M))
 		if(prob(20))
 			M.KnockOut(15)
+
+/obj/item/weapon/shield/montage/marine/upp
+	name = "INVC-2 explosive defense shield"
+	desc = "A heavy shield adept at blocking blunt or sharp objects from connecting with the shield wielder. Mades small explosion from contact with it."
+	icon = 'icons/obj/items/weapons.dmi'
+	icon_state = "marine_shield"
+	flags_equip_slot = SLOT_BACK
+	block_chance = 85
+	force = 15
+	throwforce = 6
+	throw_speed = 1
+	throw_range = 4
+	w_class = 4.0
+	origin_tech = "materials=2"
+	attack_verb = list("shoved", "bashed", "slash")
+	cooldown = 4 //shield bash cooldown. based on world.time
+
+/obj/item/weapon/shield/montage/marine/upp/attack(mob/M, mob/user)
+	. = ..()
+	if(isYautja(M))
+		return
+//	var/mob/living/carbon/Xenomorph/X
+	if(isXeno(M)) //&& X.tier > 1) /*tofix*/
+		if(prob(40))
+			explosion(M, -1, -1, 1)
+			return
+	if(ishuman(M))
+		if(prob(20))
+			explosion(M, -1, -1, 1)
 
 //-------------------------------------GUNS------------------------------------------------------//
 
