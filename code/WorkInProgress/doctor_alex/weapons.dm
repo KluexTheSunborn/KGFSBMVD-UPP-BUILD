@@ -122,7 +122,7 @@
 	name = "INVC-2 explosive defense shield"
 	desc = "A heavy shield adept at blocking blunt or sharp objects from connecting with the shield wielder. Mades small explosion from contact with it."
 	icon = 'icons/obj/items/weapons.dmi'
-	icon_state = "marine_shield"
+	icon_state = "upp_shield"
 	flags_equip_slot = SLOT_BACK
 
 /obj/item/weapon/shield/montage/marine/upp/attack(mob/M, mob/user)
