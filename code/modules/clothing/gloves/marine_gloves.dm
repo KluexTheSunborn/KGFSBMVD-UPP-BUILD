@@ -17,6 +17,10 @@
 	flags_armor_protection = HANDS
 	armor = list(melee = 60, bullet = 40, laser = 10,energy = 10, bomb = 10, bio = 10, rad = 0)
 
+/obj/item/clothing/gloves/marine/upp
+	name = "soldat combat gloves"
+	desc = "Standard issue UPP tactical gloves."
+
 /obj/item/clothing/gloves/marine/alpha
 	name = "alpha squad gloves"
 	icon_state = "red"

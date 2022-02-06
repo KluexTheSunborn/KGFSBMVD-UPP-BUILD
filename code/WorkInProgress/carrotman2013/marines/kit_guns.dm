@@ -23,8 +23,17 @@
 		new /obj/item/explosive/grenade/frag(src)
 		new /obj/item/explosive/grenade/frag(src)
 
+/obj/item/storage/belt/grenade_mini/upp
+	name="E80 pattern grenade rig"
+	desc="The E80 is the standard load-bearing equipment of the UPP. It consists of a modular belt with various clips. This version is designed to carry bulk quantities of Union-class Grenades."
 
-
+/obj/item/storage/belt/grenade_mini/upp/New()
+	..()
+	spawn(1)
+		new /obj/item/explosive/grenade/phosphorus/upp(src)
+		new /obj/item/explosive/grenade/phosphorus/upp(src)
+		new /obj/item/explosive/grenade/frag/upp(src)
+		new /obj/item/explosive/grenade/frag/upp(src)
 
 //Mini expolosive pouch
 
