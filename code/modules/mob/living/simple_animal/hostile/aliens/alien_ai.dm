@@ -509,3 +509,47 @@
 				var/obj/vehicle/walker/W = V
 				W.take_damage(actualDamage, "acid")
 			continue
+
+// Queen Things
+
+/mob/living/simple_animal/alien/queen/AttackingTarget()
+	if(!Adjacent(target))
+		return
+	if(isliving(target))
+		var/mob/living/L = target
+		if(prob(30))
+			screech(src)
+		else
+			L.attack_animal(src)
+		return L
+
+/mob/living/simple_animal/alien/queen/proc/screech(var/mob/living/enemy)
+	if(ishuman(enemy))
+		visible_message("<span class='xenohighdanger'>\The [src] emits an ear-splitting guttural roar!</span>")
+
+//	create_shriekwave() //Adds the visual effect. Wom wom wom
+
+	playsound(loc,'sound/voice/predalien_death.ogg', 75, 1)
+
+	for(var/mob/living/carbon/human/M in oview(7, src))
+		//if(istype(M.wear_ear, /obj/item/clothing/ears/earmuffs))
+		//	continue
+		var/mobility_aura_reduction = max(1 - 0.2 * M.mobility_aura, 0)	//All Orders help to handle different effects of screech
+		var/protection_aura_reduction = max(1 - 0.2 * M.protection_aura, 0)
+		var/marksman_aura_reduction = max(1 - 0.2 * M.marskman_aura, 0)
+
+		var/dist = get_dist(src,M)
+		if(dist <= 4)
+			to_chat(M, "<span class='danger'>An ear-splitting guttural roar shakes the ground beneath your feet and disorientates you!</span>")
+			M.stunned += 0.1 * protection_aura_reduction
+			M.temporary_slowdown = 3 * mobility_aura_reduction
+			M.KnockDown(2 * protection_aura_reduction)
+			if(!M.eye_blind)
+				M.eye_blurry += 4 * marksman_aura_reduction //blurry vision
+			if(!M.ear_deaf)
+				M.ear_deaf += 4 //Deafens them temporarily
+		else if(dist >= 5 && dist < 7)
+			M.temporary_slowdown = 2 * mobility_aura_reduction
+			if(!M.eye_blind)
+				M.eye_blurry += 3 * marksman_aura_reduction
+			to_chat(M, "<span class='danger'>The roar shakes your body to the core, freezing you in place and disorientates you a little!</span>")

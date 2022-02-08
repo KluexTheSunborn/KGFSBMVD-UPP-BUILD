@@ -243,6 +243,7 @@
 	icon_living = "Suicide Running"
 	maxHealth = 50
 	health = 50
+	move_to_delay = 4
 
 	var/datum/effect_system/smoke_spread/xeno_acid/smoke
 
@@ -253,3 +254,49 @@
 	. = ..()
 	smoke = new /datum/effect_system/smoke_spread/xeno_acid
 	smoke.attach(src)
+
+/mob/living/simple_animal/alien/tank
+	name = "alien lesser crusher"
+	desc = "A massive alien brawler, that has many robust chitin plates, but also small arms compare to other xenos."
+	icon = 'icons/Xeno/2x2_Xenos.dmi'
+	icon_state = "Praetorian Walking"
+	icon_living = "Praetorian Walking"
+	icon_dead = "Praetorian Dead"
+	maxHealth = 600
+	health = 600
+	melee_damage_lower = 10
+	melee_damage_upper = 20
+	move_to_delay = 4
+
+	var/bot_followers = 0
+	var/bot_max = 2
+	var/deflect_chance = 60
+
+/mob/living/simple_animal/alien/tank/bullet_act(obj/item/projectile/Proj)
+	if(prob(deflect_chance))
+		visible_message("<span class='avoidharm'>[src] easily deflects bullet!</span>","", null, 5)
+		return 1
+	return ..()
+
+/mob/living/simple_animal/alien/queen
+	name = "alien lesser queen"
+	desc = "A massive alien thing, that has many robust chitin plates and can shred any foe, surviving under heavy fire."
+	icon = 'icons/Xeno/2x2_Xenos.dmi'
+	icon_state = "Queen Walking"
+	icon_living = "Queen Walking"
+	icon_dead = "Queen Dead"
+	maxHealth = 1000
+	health = 1000
+	melee_damage_lower = 25
+	melee_damage_upper = 35
+	move_to_delay = 4
+
+	var/bot_followers = 0
+	var/bot_max = 10
+	var/deflect_chance = 40
+
+/mob/living/simple_animal/alien/queen/bullet_act(obj/item/projectile/Proj)
+	if(prob(deflect_chance))
+		visible_message("<span class='avoidharm'>[src] easily deflects bullet!</span>","", null, 5)
+		return 1
+	return ..()
