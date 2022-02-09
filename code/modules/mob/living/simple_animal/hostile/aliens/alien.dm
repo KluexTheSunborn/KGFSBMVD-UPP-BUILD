@@ -272,6 +272,12 @@
 	var/bot_max = 2
 	var/deflect_chance = 60
 
+/mob/living/simple_animal/alien/tank/ex_act(severity)
+	return
+
+/mob/living/simple_animal/alien/tank/IgniteMob()
+	return
+
 /mob/living/simple_animal/alien/tank/bullet_act(obj/item/projectile/Proj)
 	if(prob(deflect_chance))
 		visible_message("<span class='avoidharm'>[src] easily deflects bullet!</span>","", null, 5)
@@ -295,7 +301,17 @@
 	var/bot_max = 10
 	var/deflect_chance = 40
 
+/mob/living/simple_animal/alien/queen/ex_act(severity)
+	return
+
+/mob/living/simple_animal/alien/queen/IgniteMob()
+	return
+
 /mob/living/simple_animal/alien/queen/bullet_act(obj/item/projectile/Proj)
+
+	if(prob(30))
+		screech(src)
+
 	if(prob(deflect_chance))
 		visible_message("<span class='avoidharm'>[src] easily deflects bullet!</span>","", null, 5)
 		return 1

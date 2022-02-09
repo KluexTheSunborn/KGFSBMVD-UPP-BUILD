@@ -512,17 +512,6 @@
 
 // Queen Things
 
-/mob/living/simple_animal/alien/queen/AttackingTarget()
-	if(!Adjacent(target))
-		return
-	if(isliving(target))
-		var/mob/living/L = target
-		if(prob(30))
-			screech(src)
-		else
-			L.attack_animal(src)
-		return L
-
 /mob/living/simple_animal/alien/queen/proc/screech(var/mob/living/enemy)
 	if(ishuman(enemy))
 		visible_message("<span class='xenohighdanger'>\The [src] emits an ear-splitting guttural roar!</span>")
@@ -542,14 +531,14 @@
 		if(dist <= 4)
 			to_chat(M, "<span class='danger'>An ear-splitting guttural roar shakes the ground beneath your feet and disorientates you!</span>")
 			M.stunned += 0.1 * protection_aura_reduction
-			M.temporary_slowdown = 3 * mobility_aura_reduction
+			M.temporary_slowdown = 5 * mobility_aura_reduction
 			M.KnockDown(2 * protection_aura_reduction)
 			if(!M.eye_blind)
 				M.eye_blurry += 4 * marksman_aura_reduction //blurry vision
 			if(!M.ear_deaf)
 				M.ear_deaf += 4 //Deafens them temporarily
 		else if(dist >= 5 && dist < 7)
-			M.temporary_slowdown = 2 * mobility_aura_reduction
+			M.temporary_slowdown = 3 * mobility_aura_reduction
 			if(!M.eye_blind)
 				M.eye_blurry += 3 * marksman_aura_reduction
 			to_chat(M, "<span class='danger'>The roar shakes your body to the core, freezing you in place and disorientates you a little!</span>")
