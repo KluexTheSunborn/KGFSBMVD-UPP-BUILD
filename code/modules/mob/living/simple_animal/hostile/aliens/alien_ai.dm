@@ -542,3 +542,181 @@
 			if(!M.eye_blind)
 				M.eye_blurry += 3 * marksman_aura_reduction
 			to_chat(M, "<span class='danger'>The roar shakes your body to the core, freezing you in place and disorientates you a little!</span>")
+
+//Carrier Things
+
+/mob/living/simple_animal/alien/carrier/death(gibbed, deathmessage = "lets out a waning guttural screech, green blood bubbling from its maw.")
+	. = ..()
+	if(!.) return //If they were already dead, it will return.
+	walk(src, 0)
+	stat = DEAD
+	new /obj/item/clothing/mask/facehugger(src.loc, src, null)
+	new /obj/item/clothing/mask/facehugger(src.loc, src, null)
+	new /obj/item/clothing/mask/facehugger(src.loc, src, null)
+	new /obj/item/clothing/mask/facehugger(src.loc, src, null)
+	new /obj/item/clothing/mask/facehugger(src.loc, src, null)
+	if(xeno_number > 0 && xeno_number <= hive_datum.len)
+		hive_datum[xeno_number].xeno_lessers_list -= src
+	if(leader)
+		if(isXeno(leader))
+			var/mob/living/carbon/Xenomorph/X = leader
+			X.bot_followers--
+			leader = null
+		else
+			var/mob/living/simple_animal/alien/leader/lead = leader
+			lead.bot_followers--
+			leader = null
+	playsound(src, 'sound/voice/alien_death.ogg', 50, 1)
+	return 1
+
+//Burrower Things
+
+/mob/living/simple_animal/alien/burrower/handle_special_behavior()
+	var/obj/structure/alien_spawner/S = locate() in range(10, loc)
+	if(!S)
+		var/turf/T = src.loc
+		if(!istype(T))
+			return
+
+		new /obj/structure/alien_spawner(src.loc, src, null)
+		playsound(src.loc, "alien_resin_build", 25)
+
+/mob/living/simple_animal/alien/burrower/FindTarget()
+	var/list/enemies = new/list()
+	for(var/atom/A in ListTargets(7))
+		if(isliving(A))
+			var/mob/living/L = A
+			if(L.faction == src.faction && !attack_same)
+				continue
+			else if(L in friends)
+				continue
+			else if (istype(src, /mob/living/simple_animal/alien) && (isrobot(L)))
+				continue
+			else if(isXeno(L))
+				return ..()
+			else
+				enemies+=L
+	if(enemies.len > max_enemies)
+		stance = HOSTILE_STANCE_AWAY
+		target = null
+		walk_away(src, pick(ListTargets(7)), 7, move_to_delay)
+		return null
+	else
+		return ..()
+
+/mob/living/simple_animal/alien/burrower/MoveToTarget()
+	var/list/enemies = new/list()
+	for(var/atom/A in ListTargets(7))
+		if(isliving(A))
+			var/mob/living/L = A
+			if(L.faction == src.faction && !attack_same)
+				continue
+			else if(L in friends)
+				continue
+			else if (istype(src, /mob/living/simple_animal/alien) && (isrobot(L)))
+				continue
+			else if(isXeno(L))
+				return ..()
+			else
+				enemies+=L
+	if(enemies.len > max_enemies)
+		stance = HOSTILE_STANCE_AWAY
+		target = null
+		walk_away(src, pick(ListTargets(7)), 7, move_to_delay)
+		return null
+	else
+		return ..()
+
+/mob/living/simple_animal/alien/burrower/AttackTarget()
+	var/list/enemies = new/list()
+	for(var/atom/A in ListTargets(7))
+		if(isliving(A))
+			var/mob/living/L = A
+			if(L.faction == src.faction && !attack_same)
+				continue
+			else if(L in friends)
+				continue
+			else if (istype(src, /mob/living/simple_animal/alien) && (isrobot(L)))
+				continue
+			else if(isXeno(L))
+				return ..()
+			else
+				enemies+=L
+	if(enemies.len > max_enemies)
+		stance = HOSTILE_STANCE_AWAY
+		target = null
+		walk_away(src, pick(ListTargets(7)), 7, move_to_delay)
+		return 0
+	else
+		return ..()
+
+//Runner Things
+
+/mob/living/simple_animal/alien/runner/FindTarget()
+	var/list/enemies = new/list()
+	for(var/atom/A in ListTargets(7))
+		if(isliving(A))
+			var/mob/living/L = A
+			if(L.faction == src.faction && !attack_same)
+				continue
+			else if(L in friends)
+				continue
+			else if (istype(src, /mob/living/simple_animal/alien) && (isrobot(L)))
+				continue
+			else if(isXeno(L))
+				return ..()
+			else
+				enemies+=L
+	if(enemies.len > max_enemies)
+		stance = HOSTILE_STANCE_AWAY
+		target = null
+		walk_away(src, pick(ListTargets(7)), 7, move_to_delay)
+		return null
+	else
+		return ..()
+
+/mob/living/simple_animal/alien/runner/MoveToTarget()
+	var/list/enemies = new/list()
+	for(var/atom/A in ListTargets(7))
+		if(isliving(A))
+			var/mob/living/L = A
+			if(L.faction == src.faction && !attack_same)
+				continue
+			else if(L in friends)
+				continue
+			else if (istype(src, /mob/living/simple_animal/alien) && (isrobot(L)))
+				continue
+			else if(isXeno(L))
+				return ..()
+			else
+				enemies+=L
+	if(enemies.len > max_enemies)
+		stance = HOSTILE_STANCE_AWAY
+		target = null
+		walk_away(src, pick(ListTargets(7)), 7, move_to_delay)
+		return null
+	else
+		return ..()
+
+/mob/living/simple_animal/alien/runner/AttackTarget()
+	var/list/enemies = new/list()
+	for(var/atom/A in ListTargets(7))
+		if(isliving(A))
+			var/mob/living/L = A
+			if(L.faction == src.faction && !attack_same)
+				continue
+			else if(L in friends)
+				continue
+			else if (istype(src, /mob/living/simple_animal/alien) && (isrobot(L)))
+				continue
+			else if(isXeno(L))
+				return ..()
+			else
+				enemies+=L
+	if(enemies.len > max_enemies)
+		stance = HOSTILE_STANCE_AWAY
+		target = null
+		walk_away(src, pick(ListTargets(7)), 7, move_to_delay)
+		return 0
+	else
+		return ..()

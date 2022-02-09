@@ -71,6 +71,10 @@
 		return
 	if(stat == DEAD)
 		return
+	if(icon_state == "Hivelord Walking")
+		return
+	if(icon_state == "Queen Walking")
+		return
 	enter_bot(usr)
 
 /mob/living/simple_animal/alien/verb/leave()
@@ -158,7 +162,7 @@
 	melee_damage_upper = 15
 	move_to_delay = 2
 	speed = 1
-	var/max_enemies = 5								//Will run from 5 enemies
+	var/max_enemies = 3								//Will run from 3 enemies
 
 // Still using old projectile code - commenting this out for now
 // /mob/living/simple_animal/alien//alien/sentinel
@@ -316,3 +320,47 @@
 		visible_message("<span class='avoidharm'>[src] easily deflects bullet!</span>","", null, 5)
 		return 1
 	return ..()
+
+/mob/living/simple_animal/alien/carrier
+	name = "alien lesser carrier"
+	desc = "A strange-looking alien creature. It carries a number of scuttling jointed crablike creatures."
+	icon = 'icons/Xeno/2x2_Xenos.dmi'
+	icon_state = "Carrier Walking"
+	icon_living = "Carrier Walking"
+	icon_dead = "Carrier Dead"
+	maxHealth = 200
+	health = 200
+	melee_damage_lower = 5
+	melee_damage_upper = 15
+
+/mob/living/simple_animal/alien/burrower
+	name = "alien burrower"
+	desc = "A huge ass xeno covered in weeds! Oh shit!"
+	icon = 'icons/Xeno/2x2_Xenos.dmi'
+	icon_state = "Hivelord Walking"
+	icon_living = "Hivelord Walking"
+	icon_dead = "Hivelord Dead"
+	maxHealth = 200
+	health = 200
+	melee_damage_lower = 5
+	melee_damage_upper = 15
+
+	var/max_enemies = 2								//Will run from 2 enemies
+
+	var/bot_followers = 0
+	var/bot_max = 5
+
+/mob/living/simple_animal/alien/runner
+	name = "alien hunter"
+	desc = "Common hivetrooper. Weak, but fast."
+	icon = 'icons/Xeno/2x2_Xenos.dmi'
+	icon_state = "Runner Walking"
+	icon_living = "Runner Walking"
+	icon_dead = "Runner Dead"
+	maxHealth = 100
+	health = 100
+	melee_damage_lower = 10
+	melee_damage_upper = 20
+	move_to_delay = 2
+
+	var/max_enemies = 3								//Will run from 3 enemies
